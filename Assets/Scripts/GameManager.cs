@@ -6,7 +6,6 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
-
     private int m_Points = 0;
     [SerializeField]
     private TMP_Text m_PointsText;
