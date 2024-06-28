@@ -37,12 +37,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * movementSpeed * Time.deltaTime);
+            transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.right * -movementSpeed * Time.deltaTime);
+            transform.Translate(Vector3.forward * -movementSpeed * Time.deltaTime);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
