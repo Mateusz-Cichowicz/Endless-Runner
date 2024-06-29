@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,20 +16,23 @@ public class PlayerController : MonoBehaviour
     private float velocity = 0;
     private bool isJumping = false;
     [SerializeField]
-    private Material material;
-    [SerializeField]
-    private Color playerColor;
-    [SerializeField]
     private GameManager gm;
 
     private int powerUpDuration = 4;
-
+    private float verticalUpEdge = 4.5f;
+    private float verticalDownEdge = -2f;
+    private int horizontalSpaceEdge = 9;
     private Collider collider;
+    [SerializeField]
+    private List<Transform> lanePositions = new List<Transform>();
+    private int lanePosition = 0;
+    private Vector3 target;
+    private bool targetReached = true;
 
     private void Start()
     {
         collider = GetComponent<Collider>();
-        material.SetColor("_Color", playerColor);
+        target = transform.position;
     }
 
     void Update()
@@ -44,6 +48,24 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(Vector3.forward * -movementSpeed * Time.deltaTime);
         }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            if (lanePosition != 0)
+            {
+                lanePosition -= 1;
+                target = new Vector3(transform.position.x, transform.position.y, lanePositions[lanePosition].position.z);
+                targetReached = false;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (lanePosition != 3)
+            {
+                lanePosition += 1;
+                target = new Vector3(transform.position.x, transform.position.y, lanePositions[lanePosition].position.z);
+                targetReached = false;
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
@@ -51,13 +73,21 @@ public class PlayerController : MonoBehaviour
             velocity = jumpForce;
         }
 
-        if (transform.position.y == -3)
+        if (transform.position.y == verticalDownEdge)
         {
             isJumping = false;
         }
+        if (!targetReached)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target, movementSpeed * Time.deltaTime);
+            if (transform.position == target) 
+            {
+                targetReached = true;
+            }
+        }
         transform.Translate(new Vector3( 0, velocity, 0)* Time.deltaTime);
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -9, 9), Mathf.Clamp(transform.position.y, -3, 4.5f), transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -horizontalSpaceEdge, horizontalSpaceEdge), Mathf.Clamp(transform.position.y, verticalDownEdge, verticalUpEdge), transform.position.z);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -69,8 +99,6 @@ public class PlayerController : MonoBehaviour
         else 
         {
             PowerUpsAvailable powerup = other.GetComponent<PowerUp>().powerUpType;
-            Color color = other.gameObject.GetComponent<Renderer>().material.GetColor("_Color");
-            material.SetColor("_Color", color);
             Destroy(other.gameObject);
             StartCoroutine(Pickup(powerup));
         }
@@ -95,7 +123,6 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Power up type is invalid.");
                 break;
         }
-        material.SetColor("_Color", playerColor);
     }
 }
 

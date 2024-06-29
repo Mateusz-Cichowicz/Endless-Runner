@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class ObstacleController : MonoBehaviour
 {
-    
-    private float speed = 4f;//+
+
+    private float speed = 4f;
     private GameManager m_GameManager;
     private void Start()
     {
