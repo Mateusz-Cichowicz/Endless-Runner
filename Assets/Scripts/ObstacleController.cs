@@ -14,8 +14,8 @@ public class ObstacleController : MonoBehaviour
     }
     void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
-
+        transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
+        
         if (transform.position.x <= -12)
         {
             Destroy(gameObject);

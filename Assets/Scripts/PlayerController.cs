@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private int powerUpDuration = 4;
     private float verticalUpEdge = 4.5f;
     private float verticalDownEdge = -2f;
-    private int horizontalSpaceEdge = 9;
+    private int horizontalSpaceEdge = 8;
     private Collider collider;
     [SerializeField]
     private List<Transform> lanePositions = new List<Transform>();
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<ObstacleController>())
+        if (other.GetComponent<ObstacleController>() || other.GetComponentInParent<ObstacleController>())
         {
             gm.StopGame();
         }

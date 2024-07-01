@@ -10,7 +10,7 @@ public class RoadController : MonoBehaviour
     {
         transform.Translate(Vector3.back * speed * Time.deltaTime);
 
-        if (transform.position.x <= -17.5)
+        if (transform.position.x <= -19.5)
         {
             Destroy(gameObject);
         }
