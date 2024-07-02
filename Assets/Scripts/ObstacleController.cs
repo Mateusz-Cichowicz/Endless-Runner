@@ -5,18 +5,22 @@ using UnityEngine;
 
 public class ObstacleController : MonoBehaviour
 {
-
-    private float speed = 4f;
+    [SerializeField]
+    public float speed = 4f;
     private GameManager m_GameManager;
+    [SerializeField]
+    private Space currentSpace;
+    [SerializeField]
+    private Vector3 direction;
     private void Start()
     {
         m_GameManager = FindObjectOfType<GameManager>();
     }
     void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
+        transform.Translate(direction * speed * Time.deltaTime, currentSpace);
         
-        if (transform.position.x <= -12)
+        if (transform.position.x <= -18 || transform.position.x >= 18)
         {
             Destroy(gameObject);
         }

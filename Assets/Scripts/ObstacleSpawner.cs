@@ -9,6 +9,7 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField]
     private List<GameObject> obstaclePrefabs;
     public float obstacleSpawnigTime;
+    public float obstacleSpeedMultiplier = 1f;
     [SerializeField]
     private float obstacleRotationYValue = 0;
     void Start() 
@@ -24,6 +25,7 @@ public class ObstacleSpawner : MonoBehaviour
             GameObject prefab = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Count)];
 
             tempGameObject = Instantiate(prefab, spawnPosition, Quaternion.identity);
+            tempGameObject.GetComponent<ObstacleController>().speed += obstacleSpeedMultiplier;
             tempGameObject.transform.eulerAngles = new Vector3(0,obstacleRotationYValue,0);
 
             yield return new WaitForSeconds(obstacleSpawnigTime);

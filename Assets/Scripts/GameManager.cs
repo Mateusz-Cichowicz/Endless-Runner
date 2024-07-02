@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     ScrollingBackground scrollingBacground;
     [SerializeField]
-    ObstacleSpawner obstacleSpawner;
+    List <ObstacleSpawner> obstacleSpawners = new List<ObstacleSpawner>();
 
     public List<int> Records = new List<int>();
     private float speedMultiplier = 0.01f;
@@ -48,7 +48,13 @@ public class GameManager : MonoBehaviour
     private void UpdateGameSpeed() 
     {
         scrollingBacground.speed += scrollingBacground.speed * speedMultiplier;
-        obstacleSpawner.obstacleSpawnigTime -= obstacleSpawner.obstacleSpawnigTime * speedMultiplier;
+        foreach(var spawner in obstacleSpawners) 
+        {
+            spawner.obstacleSpawnigTime -= spawner.obstacleSpawnigTime * speedMultiplier;
+            spawner.obstacleSpeedMultiplier += spawner.obstacleSpeedMultiplier * speedMultiplier;
+        }
+        //obstacleSpawner.obstacleSpawnigTime -= obstacleSpawner.obstacleSpawnigTime * speedMultiplier;
+        //obstacleSpawner.obstacleSpeedMultiplier += obstacleSpawner.obstacleSpeedMultiplier * speedMultiplier;
     }
 
     private void ManageRecords() 
