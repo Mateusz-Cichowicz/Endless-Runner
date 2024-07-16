@@ -53,8 +53,6 @@ public class GameManager : MonoBehaviour
             spawner.obstacleSpawnigTime -= spawner.obstacleSpawnigTime * speedMultiplier;
             spawner.obstacleSpeedMultiplier += spawner.obstacleSpeedMultiplier * speedMultiplier;
         }
-        //obstacleSpawner.obstacleSpawnigTime -= obstacleSpawner.obstacleSpawnigTime * speedMultiplier;
-        //obstacleSpawner.obstacleSpeedMultiplier += obstacleSpawner.obstacleSpeedMultiplier * speedMultiplier;
     }
 
     private void ManageRecords() 

@@ -427,7 +427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 34.0699}
+  m_AnchoredPosition: {x: -2, y: 40}
   m_SizeDelta: {x: 400, y: 40.260895}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &64911954
@@ -613,7 +613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -126.973755}
+  m_AnchoredPosition: {x: -2, y: -60}
   m_SizeDelta: {x: 400, y: 40.260895}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221651709
@@ -2392,10 +2392,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefabs:
+  - {fileID: 100010, guid: b3f4ad6e44f81784ba0ebe95aadf2a7d, type: 3}
+  - {fileID: 100010, guid: de535534204e83f4e84497ac553192eb, type: 3}
+  - {fileID: 100010, guid: 3cfde9a41ff096140a1bfec6f262d0f0, type: 3}
+  - {fileID: 100010, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
+  - {fileID: 100010, guid: d267fbb9e36c6e4458c9a8756d725a79, type: 3}
+  - {fileID: 100010, guid: 12dd350c4c7e7754b807b38a22b4d078, type: 3}
+  - {fileID: 100010, guid: 11a57a102cdb5e642899ceab079f1938, type: 3}
+  - {fileID: 100014, guid: b836817eff26a034bbd13884590ce648, type: 3}
   - {fileID: 100014, guid: 025a3497fa872fe4ebfed7edb8eb310c, type: 3}
-  - {fileID: 100010, guid: fba5e236738a7c940b3a8d031c307794, type: 3}
+  - {fileID: 100014, guid: a8a6e2e210e71bc4ab5ba85122928ac8, type: 3}
+  - {fileID: 100010, guid: fc2b2b65264c13f48a615fa7dbc2ef24, type: 3}
+  - {fileID: 100010, guid: b1969db97c2d8604ba4bfe3000a13858, type: 3}
   - {fileID: 100010, guid: 675baac8bae68964e948aabc6ff2857c, type: 3}
-  obstacleSpawnigTime: 2
+  - {fileID: 100010, guid: a7b60e70606f80245b2f8bc7ce2fadb6, type: 3}
+  - {fileID: 100010, guid: 1dabf884aa0716149a1bc775f0b620d8, type: 3}
+  - {fileID: 100010, guid: a7cd9ad30e9d4c146986aa1e6694b9e5, type: 3}
+  - {fileID: 100010, guid: f0ffa104f4ba20b40a0421d7c2b5f098, type: 3}
+  - {fileID: 100010, guid: fba5e236738a7c940b3a8d031c307794, type: 3}
+  - {fileID: 100014, guid: 636cb627739652c418fcc4f683a138b1, type: 3}
+  - {fileID: 100014, guid: f119644f5530c1044aa946bb6b18bb13, type: 3}
+  - {fileID: 100014, guid: 1508f459923b7df4889f466e17864ab4, type: 3}
+  obstacleSpawnigTime: 4
   obstacleSpeedMultiplier: 0.01
   obstacleRotationYValue: 90
 --- !u!4 &689314387
@@ -2449,7 +2467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -73.29256}
+  m_AnchoredPosition: {x: -2, y: -10}
   m_SizeDelta: {x: 400, y: 40.260895}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &694213178
@@ -2941,7 +2959,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1004522466
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2949,7 +2967,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004522465}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2959,7 +2977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -19.611298}
+  m_AnchoredPosition: {x: -2, y: -19.611267}
   m_SizeDelta: {x: 400, y: 40.260895}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1004522467
@@ -5278,9 +5296,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefabs:
   - {fileID: 100010, guid: b3f4ad6e44f81784ba0ebe95aadf2a7d, type: 3}
+  - {fileID: 100010, guid: de535534204e83f4e84497ac553192eb, type: 3}
+  - {fileID: 100010, guid: 3cfde9a41ff096140a1bfec6f262d0f0, type: 3}
+  - {fileID: 100010, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
+  - {fileID: 100010, guid: d267fbb9e36c6e4458c9a8756d725a79, type: 3}
   - {fileID: 100010, guid: 12dd350c4c7e7754b807b38a22b4d078, type: 3}
+  - {fileID: 100010, guid: 11a57a102cdb5e642899ceab079f1938, type: 3}
+  - {fileID: 100014, guid: b836817eff26a034bbd13884590ce648, type: 3}
+  - {fileID: 100014, guid: 025a3497fa872fe4ebfed7edb8eb310c, type: 3}
+  - {fileID: 100014, guid: a8a6e2e210e71bc4ab5ba85122928ac8, type: 3}
+  - {fileID: 100010, guid: fc2b2b65264c13f48a615fa7dbc2ef24, type: 3}
   - {fileID: 100010, guid: b1969db97c2d8604ba4bfe3000a13858, type: 3}
+  - {fileID: 100010, guid: 675baac8bae68964e948aabc6ff2857c, type: 3}
+  - {fileID: 100010, guid: a7b60e70606f80245b2f8bc7ce2fadb6, type: 3}
+  - {fileID: 100010, guid: 1dabf884aa0716149a1bc775f0b620d8, type: 3}
+  - {fileID: 100010, guid: a7cd9ad30e9d4c146986aa1e6694b9e5, type: 3}
+  - {fileID: 100010, guid: f0ffa104f4ba20b40a0421d7c2b5f098, type: 3}
   - {fileID: 100010, guid: fba5e236738a7c940b3a8d031c307794, type: 3}
+  - {fileID: 100014, guid: 636cb627739652c418fcc4f683a138b1, type: 3}
+  - {fileID: 100014, guid: f119644f5530c1044aa946bb6b18bb13, type: 3}
+  - {fileID: 100014, guid: 1508f459923b7df4889f466e17864ab4, type: 3}
   obstacleSpawnigTime: 4
   obstacleSpeedMultiplier: 0.01
   obstacleRotationYValue: -90

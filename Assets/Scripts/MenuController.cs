@@ -68,8 +68,13 @@ public class MenuController : MonoBehaviour
     }
     public void ExitGame() 
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+    #if (UNITY_EDITOR)
+            UnityEditor.EditorApplication.isPlaying = false;
+#elif (UNITY_STANDALONE)
         Application.Quit();
+#elif (UNITY_WEBGL)
+        Application.OpenURL("https://mateusz-cichowicz.github.io");
+#endif
     }
 
     public void RestartGame() 
